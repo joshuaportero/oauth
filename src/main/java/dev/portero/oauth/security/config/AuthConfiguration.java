@@ -1,6 +1,5 @@
 package dev.portero.oauth.security.config;
 
-import dev.portero.oauth.domain.Client;
 import dev.portero.oauth.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -29,8 +28,8 @@ public class AuthConfiguration {
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userDetailsService());
-        authProvider.setPasswordEncoder(passwordEncoder());
+        authProvider.setUserDetailsService(this.userDetailsService());
+        authProvider.setPasswordEncoder(this.passwordEncoder());
         return authProvider;
     }
 

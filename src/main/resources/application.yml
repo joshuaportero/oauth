@@ -1,3 +1,8 @@
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: off
+    org.hibernate: off
 server:
   port: 8080
 spring:
@@ -12,23 +17,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-#  security:
-#    oauth2:
-#      client:
-#        registration:
-#          github:
-#            client-id: e9b7e3c0c3e0b3d0e3b0d3c0d3b0c3d0e3
-#            client-secret: e3b0c3d0e3b0c3d0e3b0c3d0e3b0c3d0e3
-#            authorization-grant-type: authorization_code
-#            redirect-uri: http://localhost:8080/login/oauth2/code/github
-#            scope: read:user
-#        provider:
-#          github:
-#            issuer-uri: https://github.com/login/oauth/authorize
-application:
-  security:
-    jwt:
-      secret: 48aa46173c8b3256df8db65e0c29dc8ea341fe91504e46832aa22fd89d2e7582
-      token:
-        validity: 3600
-        expire-after-seconds: 345600
+security:
+  firebase:
+    account-key: ${FIREBASE_ACCOUNT_KEY}
